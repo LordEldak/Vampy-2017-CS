@@ -1,0 +1,2 @@
+import random as r
+x = r.uniform(1,48)

@@ -1,0 +1,19 @@
+Lower = 0
+Upper = 0
+Guess = 1
+ans   = ""
+while ans != "Yepp":
+	ans = input("Is " +str(Guess)+" equal to, more, or less than your number? (Yepp/More/Less):")
+	if ans == "Less":
+		if Upper == 0:		
+			Guess *= 2
+		else:
+			Lower = Guess
+			guess = int((Lower + Upper)/2)
+	elif ans == "More":
+		if Upper == 0:
+			Lower = int(Guess /2)
+		Upper = Guess
+		Guess = int((Lower+Upper)/2)
+
+print("Whoohoo, I guessed your number, pay up.")

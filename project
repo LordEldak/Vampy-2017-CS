@@ -1,0 +1,31 @@
+import time
+
+answer = input("Welcome: Press 1 to begin: ")
+if answer == "1":	
+	print("Welcome to the Plagerism and Fair use Determiner for videos")
+	time.sleep(1)
+	answer = input("What purpose do you wish to use a video for?: educational/commercial/private:")
+	if answer == "educational":
+		answer = input("Is the entire video relevent to the topic?: ")
+		if answer == "yes":
+			print("You are free to use this video")
+		elif answer == "no":
+			print("You should only watch what you need to oovoid unnessesary disputes")
+	elif answer == "commercial":
+		answer = input("Do you have permission to use this?: ")
+		if answer == "no":
+			print("You must gain permission before you can use this")
+		elif answer == "yes":
+			print("You are free to use this video")
+	elif answer == "private":
+		answer = input("Will you profit from the use of the chosen?: ")
+		if answer == "no":
+			print("You are free to use this video")
+		elif answer == "yes":
+			print("This is not private/personal use; please see commercial use")
+else:
+	answer = input("Do you have plans that might infringe on the video's owner's monetary gains and/or creativity?: ")
+	if answer == "yes":
+		print("This is plagerism")
+	else:
+		print("This is legal unless the owner doesn't allow it")

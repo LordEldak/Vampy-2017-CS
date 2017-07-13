@@ -1,0 +1,119 @@
+import random as r
+answer = input("Welcome to the chose your own adventure game. Enter 'START' to continue:")
+if answer == "START":
+	answer = input("CHOOSE CLASS: 1 = THIEF, 2 = SOLDIER, 3 = CLERIC, 4 = ARCHER:")
+
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Health = 1
+Attack = 1
+Stealth = 1
+Stamina = 1
+
+EnemyHealth = 3
+EnemyAttack = 3
+EnemyStealth = 3
+EnemyStamina = 3
+
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+if answer == "1":
+	print("You have chosen the THIEF")
+	print("STATS")
+	print("Health:  2")
+	print("Attack:  2")
+	print("Stealth: 5")
+	print("Stamina: 3")
+	Health = 2
+	Attack = 2
+	Stealth = 5
+	Stamina = 3
+
+elif answer == "2":
+	print("You have chosen the SOLDIER")
+	print("STATS")
+	print("Health:  3")
+	print("Attack:  5")
+	print("Stealth: 2")
+	print("Stamina: 2")
+	Health = 3
+	Attack = 5
+	Stealth = 2
+	Stamina = 2
+
+elif answer == "3":
+	print("You have chosen the CLERIC")
+	print("STATS")
+	print("Health:  5")
+	print("Attack:  3")
+	print("Stealth: 2")
+	print("Stamina: 2")
+	Health = 5
+	Attack = 3
+	Stealth = 2
+	Stamina = 2	
+
+elif answer == "4":
+	print("You have chosen the ARCHER")
+	print("STATS")
+	print("Health:  2") 
+	print("Attack:  2")
+	print("Stealth: 3")
+	print("Stamina: 5")
+	Health = 2
+	Attack = 2
+	Stealth = 3
+	Stamina = 5
+
+else:
+	print("No Class")	
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+print("An enemy appeared")
+while True:
+	D6_EnemyRoll= r.randint(1,6)
+	D6_Roll= r.randint(1,6)
+	answer = input("Roll D6:")
+	if answer == "RD6":
+		print(D6_Roll)
+		print("Enemy Roll:")
+		print(D6_EnemyRoll)
+	if D6_Roll + Health < D6_EnemyRoll + EnemyAttack:
+		Health -= 1
+		print("1 Damage Taken")
+	if D6_Roll + Attack > D6_EnemyRoll + EnemyHealth:
+		EnemyHealth -=1
+		print("1 Damage Delt")
+	if Health == 0:
+		print("DEATH")
+		break
+	elif EnemyHealth == 0:
+		print("You Defeated")
+		answer = input("You spot a KEY on the GAURD. Do you take it?: ")
+		if answer == "YES":
+			print("You have aquired the CELL KEY!")
+			answer = input("Escape Cell?: ")
+			if answer == "YES":
+				print("Three halls are in front of you")
+				answer = input("Which direction do you head? F,L, or R?: ")
+				if answer == "F":
+					print("You head out FORWARD")
+				
+
+				elif answer == "L":
+					print("You head out LEFT")
+				elif answer == "R":
+					print("You head out RIGHT")
+					print("A ladder is on the side of the wall")
+					answer = input("Continue FORWARD = F, Take LADDER = U: ")
+					if answer == "F":
+						print("You continue along the path until it ends")
+						answer = input("A room appears on the left. Do you go in?:")
+						if answer == "YES":
+							print("You have entered the room")
+						else:
+							print("You continue down the path")
+
+					elif answer == "U":
+						print("DEATH")
+						break
+	
+		
+	

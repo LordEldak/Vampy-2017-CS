@@ -1,0 +1,75 @@
+import random as r
+
+Health = 2
+Attack = 2
+
+Guard_Health = 2
+Guard_Attack = 2
+
+Knight_Health = 4
+Knight_Attack = 4
+
+Dragon_Health = 15
+Dragon_Attack = 10
+#------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+def Guard_Fight():
+	while True:
+		D6_GuardRoll= r.randint(1,6)
+		D6_Roll= r.randint(1,6)
+		answer = input("Roll D6:")
+		if answer == "RD6":
+			print(D6_Roll)
+			print("Enemy Roll:")
+			print(D6_GuardRoll)
+		if D6_Roll + Health < D6_GuardRoll + Guard_Attack:
+			Health -= 1
+			print("1 Damage Taken")
+		if D6_Roll + Attack > D6_GuardRoll + Guard_Health:
+			Guard_Health -=1
+			print("1 Damage Delt")
+		if Health == 0:
+			print("DEATH")
+			exit()
+		elif Guard_Health == 0:
+			print("You Defeated")
+			break
+
+
+
+
+#Knight Combat
+while True:
+	D6_KnightRoll= r.randint(1,6)
+	D6_Roll= r.randint(1,6)
+	answer = input("Roll D6:")
+	if answer == "RD6":
+		print(D6_Roll)
+		print("Enemy Roll:")
+		print(D6_KnightRoll)
+	if D6_Roll + Health < D6_KnightRoll + Knight_Attack:
+		Health -= 1
+		print("1 Damage Taken")
+	if D6_Roll + Attack > D6_KnightRoll + Knight_Health:
+		Knight_Health -=1
+		print("1 Damage Delt")
+	if Health == 0:
+		print("DEATH")
+		exit()
+	elif Knight_Health == 0:
+		print("You Defeated")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

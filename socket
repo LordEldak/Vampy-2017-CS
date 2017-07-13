@@ -1,0 +1,17 @@
+import socket
+
+host = ''
+port = 8081
+
+s = socket.socket()
+
+s.bind((host,port))
+
+s.listen(8)
+
+conn, addr = s.accept()
+
+print("Connection Accepted")
+while True
+	data = conn.recv(1024)
+	print(data.decode('utf-8'))

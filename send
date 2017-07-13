@@ -1,0 +1,20 @@
+import time
+import socket
+while True:
+	N    = input("Who do you want to call?")#{0:"6", 1: "10", 2: "14", 3:"2"}[i]
+	msg  = "(Eric):" + input("What is your message?")
+	for i in N:	
+		addr = ("Vampy-CS-"+N, 6000)
+		data = msg.encode("UTF-8")
+		phone = socket.socket()
+		try:
+			phone.connect(addr)
+			phone.send(data)
+			resp = bytes.decode(phone.recv(1024))
+			if resp != "r":
+				print("whoops")
+			phone.close()
+			time.sleep(.1)
+		except ConnectionRefusedError:
+			print("They appear to be offline")
+

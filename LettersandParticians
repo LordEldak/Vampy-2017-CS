@@ -1,0 +1,35 @@
+import functools
+
+def letters(K):
+	qwerty = "QWERTYUIOPASDFGHJKLZXCVBNM"
+	def solve(K, start, Z):
+		if K == 0:
+			print(Z)
+		else:
+			for i in range(start+1, len(qwerty)-K+1):
+				solve(K-1, i+1, Z+qwerty[i])
+	solve(K, 0, "")
+
+def particians(K):
+	qwerty = "QWERTYUIOPASDFGHJKLZXCVBNM"
+	def solve(K, start, Z):
+		if K == 1:
+			print(Z+"/"+qwerty[start:]+"/")
+		else:
+			for i in range(start+1, len(qwerty)-K+2):
+				solve(K-1, i+1, Z+"/"+qwerty[start:i])
+	solve(K, 0, "")
+
+particians(13)
+
+
+def gcd(a, b):
+	if a < b:
+		a, b = b, a
+	def solver(a,b):
+		if b==0:
+			return a
+		else:
+			return solver(b, a%b)
+	
+	return solver(a,b)

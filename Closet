@@ -1,0 +1,15 @@
+id = 0
+Tops = ["Blue shirt", "Black Shrt", "Metallica Shirt", "Led Zepplin Shirt","Dope ass Shirt 1", "Dope ass Shirt 2", "Grey Shirt"]
+Bottoms = ["Jeans", "Shorts"]
+Shoes = ["Vans"]
+Hat = ["Dope ass hat", "Fedora", "Goat Head"]
+Jackets = ["Brown Leather", "Black Hoodie"]
+
+pattern = "#{0}: Top={1}, Bottom={2}, Shoes={3}, Hat={4}, Jackets={5}"
+for top in Tops:
+	for bottom in Bottoms:
+		for shoes in Shoes:
+			for hat in Hat:
+				for jacket in Jackets:
+					id+= 1
+					print(pattern.format(id, top, bottom, shoes, hat, jacket)) 

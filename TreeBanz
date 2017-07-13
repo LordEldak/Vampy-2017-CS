@@ -1,0 +1,24 @@
+root = [None, None, None]
+def data(node, val=None):
+	if node is None:
+		return None
+	elif val is None:
+		return node[1]
+	else:
+		node[1] = val
+
+def yes(node, child=None):
+	if node is None:
+		return None
+	elif val is None:
+		return node[0]
+	else:
+		node[0] = [None, child, None]
+
+def no(node, child=None):
+	if node is None:
+		return None
+	elif val is None:
+		return node[2]
+	else:
+		node[2] = [None, child, None]

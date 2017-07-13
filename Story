@@ -1,0 +1,46 @@
+answer = input("You spot a KEY on the GAURD. Do you take it?: ")
+if answer == "YES":
+	print("You have aquired the CELL KEY!")
+	answer = input("Escape Cell?: ")
+	if answer == "YES":
+		print("Three halls are in front of you")
+		answer = input("Which direction do you head? F,L, or R?: ")
+			if answer == "F":
+				print("You head out FORWARD")			
+			elif answer == "L":
+				print("You head out LEFT")
+			elif answer == "R":
+				print("You head out RIGHT")
+				print("A ladder is on the side of the wall")
+				answer = input("Continue FORWARD = F, Take LADDER = U: ")
+				if answer == "F":
+					print("You continue along the path until it ends")
+					answer = input("A room appears on the left. Do you go in?:")
+					if answer == "YES":
+						print("You have entered the room")
+						print("A Guard is in the room")
+						while True:
+							D6_GuardRoll= r.randint(1,6)
+							D6_Roll= r.randint(1,6)
+							answer = input("Roll D6:")
+							if answer == "RD6":
+								print(D6_Roll)
+								print("Enemy Roll:")
+								print(D6_GuardRoll)
+							if D6_Roll + Health < D6_GuardRoll + Guard_Attack:
+								Health -= 1
+								print("1 Damage Taken")
+							if D6_Roll + Attack > D6_GuardRoll + Guard_Health:
+								Guard_Health -=1
+								print("1 Damage Delt")
+								if Health == 0:
+								print("DEATH")
+								exit()
+							elif Guard_Health == 0:
+								print("You Defeated")
+								break
+							
+
+					else:
+						print("You continue down the path")
+

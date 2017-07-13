@@ -1,0 +1,34 @@
+import random as r
+
+choices = ["rock","paper", "sissors"]
+
+print("Lets play rock paper sissors")
+
+while True:
+	guess = input("Rock(0), Paper(1), Sissors(2):")
+	
+	print("CPU Picks: "+ choices[guess])
+	
+	cpu_choice = r.randit(0,2)
+	
+	if(guess == 0):
+	    if(cpu_choice == 1):
+		print("You Loose")
+	    elif(cpu_choice == guess)
+		print("Draw")
+	    else:
+		print("You Win")
+	if(guess == 1):
+	    if(cpu_choice == 0):
+		print("You Win")
+	    elif(cpu_choice == guess)
+		print("Draw")
+	    else:
+		print("You Loose")
+	if(guess == 2):
+	    if(cpu_choice == 1):
+		print("You Win")
+	    elif(cpu_choice == guess)
+		print("Draw")
+	    else:
+		print("You Loose")

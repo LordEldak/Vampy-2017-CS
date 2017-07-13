@@ -1,0 +1,34 @@
+import _thread
+import time
+import threading
+
+lock = threading.Lock()
+counter = 0
+
+def counter_work(name, delay):
+	
+	global counter
+	global lock
+	while counter < 1000000:			
+		time.sleep(delay)
+		lock.acquire()
+		counter +=1
+		print(counter)
+		lock.release()
+_thread.start_new_thread(counter_work,("Thread 1",0))
+_thread.start_new_thread(counter_work,("Thread 2",0))
+_thread.start_new_thread(counter_work,("Thread 3",0))
+_thread.start_new_thread(counter_work,("Thread 4",0))
+_thread.start_new_thread(counter_work,("Thread 5",0))
+_thread.start_new_thread(counter_work,("Thread 6",0))
+_thread.start_new_thread(counter_work,("Thread 7",0))
+_thread.start_new_thread(counter_work,("Thread 8",0))
+_thread.start_new_thread(counter_work,("Thread 9",0))
+_thread.start_new_thread(counter_work,("Thread 10",0))
+_thread.start_new_thread(counter_work,("Thread 11",0))
+_thread.start_new_thread(counter_work,("Thread 12",0))
+_thread.start_new_thread(counter_work,("Thread 13",0))
+_thread.start_new_thread(counter_work,("Thread 14",0))
+_thread.start_new_thread(counter_work,("Thread 15",0))
+while counter < 1000000:
+	pass

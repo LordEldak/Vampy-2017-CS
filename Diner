@@ -1,0 +1,49 @@
+#Morris's Cafe
+
+
+croissant = 23.00
+Crepes       = 10.00
+Soupe     = 10.00
+
+print("Welcom to Morris's Cafe")
+print("Choices include:")
+print("croissant")
+print("crepes")
+print("soup")
+answer = input("What would you like to order:")
+if answer == "croissant":
+	print("That'll be $23")
+elif answer == "crepes":
+	print("That'll be $10")
+elif answer == "Soup":
+	print("That'll be $10")
+elif answer == "crepes and soup":
+	print("That'll be $20")
+elif answer == "soup and crepes":
+	print("That'll be $20")
+elif answer == "crepes and croissant":
+	print("That'll be $33")
+elif answer == "croissant and crepes":
+	print("That'll be $23")
+elif answer == "soup and croissant":
+	print == ("That'll be $33")
+elif answer == "croissant and soup":
+	print("That'll be $33")
+elif answer == "crepes, croissant, and soup":
+	print("That'll be $43")
+elif answer == "crepes, soup, and croissant":
+	print("That'll be $43")
+elif answer == "soup, croissant, and crepes":
+	print("That'll be $43")
+elif answer == "soup, crepes, and croissant":
+	print("That'll be $43")
+elif answer == "croissant, crepes, and soup":
+	print("That'll be $43")
+elif answer == "croissant, soups, and crepes":
+	print("That'll be $43")
+
+
+
+
+
+
